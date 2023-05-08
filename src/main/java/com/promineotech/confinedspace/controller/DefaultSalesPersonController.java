@@ -31,19 +31,19 @@ public class DefaultSalesPersonController implements SalesPersonController {
     return salesPersonService.fetchSalesPersonBySalesPersonId(salesPersonId);
   }
   
-  //Create sales person
+  //CREATE/POST new sales person
   @Override
   public SalesPerson createSalesPerson(@Valid SalesPersonDto salesPersonDto) {
     return salesPersonService.updateSalesPerson(salesPersonDto.getSalesPersonId(), 
         salesPersonDto.getLastName(),salesPersonDto.getFirstName());
   }
-  //Update sales person
+  //UPDATE/PUT a sales person
   @Override
   public SalesPerson updateSalesPerson(@Valid SalesPersonDto salesPersonDto) {
     return salesPersonService.updateSalesPerson(salesPersonDto.getSalesPersonId(),
     salesPersonDto.getLastName(), salesPersonDto.getLastName());
   }
-  //Delete sales person
+  //DELETE a sales person
   @Override
   public void deleteSalesPerson(@Valid SalesPersonDto salesPersonDto) {
     log.debug("Sales Person ID Deleted = {}", salesPersonDto.getSalesPersonId());

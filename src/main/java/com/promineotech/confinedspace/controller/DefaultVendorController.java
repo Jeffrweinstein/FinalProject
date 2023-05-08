@@ -16,7 +16,7 @@ public class DefaultVendorController implements VendorController {
   @Autowired
   private VendorService vendorService;
   
-  //Gets all vendors
+  //GET all vendors
   @Override
   public List<Vendor> fetchAllVendor() {
     
@@ -24,20 +24,20 @@ public class DefaultVendorController implements VendorController {
   }
  
   
-  //Gets vendor by name
+  //GET vendor by name
   @Override
   public List<Vendor> fetchVendorByName(String customerName) {
     return vendorService.fetchAllVendor();
   }
   
-  //Creates vendor
+  //CREATE/POST a vendor
   @Override
   public Vendor createVendor(@Valid VendorDto vendorDto) {
     return vendorService.createVendor
         (vendorDto.getVendorId(), vendorDto.getVendorName(),
         vendorDto.getVendorAddress(), vendorDto.getVendorPhoneNumber());
   }
-  //Updates vendor
+  //UPDATE/PUT a vendor
   @Override
   public Vendor updateVendor(@Valid VendorDto vendorDto) {
     return vendorService.updateVendor
@@ -45,7 +45,7 @@ public class DefaultVendorController implements VendorController {
             vendorDto.getVendorAddress(), vendorDto.getVendorPhoneNumber());
    
   }
-  //Deletes Vendor
+  //DELETE a vendor
   @Override
   public void deleteVendor(@Valid VendorDto vendorDto) {
       log.debug("Customer ID Deleted = {}", vendorDto.getVendorId());

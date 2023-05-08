@@ -12,7 +12,6 @@ public class DefaultEquipmentController implements EquipmentController {
   
   @Override
   public List<Equipment> fetchAllEquipment() {
-    // TODO Auto-generated method stub
     return equipmentService.fetchEquipment();
   }
 

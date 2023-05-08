@@ -14,18 +14,18 @@ public class DefaultOrdersController implements OrdersController {
   @Autowired
   private OrdersService orderService;
   
-  //Get orders
+  //GET all orders
   @Override
   public List<Orders> fetchAllOrders() {
     
     return orderService.fetchAllOrders();
   }
-  //Get orders by customer id
+  //GET orders by customer id
   @Override
   public List<Orders> fetchOrderByCustomerId(String customerId) {
    return orderService.fetchOrderByCustomerId(customerId);
   }
-  // create orders
+  //CREATE/POST new orders
   @Override
   public Orders createOrder(@Valid OrdersDto orderDto) {
     return orderService.createOrder(orderDto.getCustomerId(),
@@ -33,7 +33,7 @@ public class DefaultOrdersController implements OrdersController {
         orderDto.getOrderPerson(), orderDto.getPoNumber(),
         orderDto.getSalesPersonID(), orderDto.getOrderId());
   }
-  // update orders
+  //UPDATE/PUT orders
   @Override
   public Orders updateOrder(@Valid OrdersDto orderDto) {
     return orderService.updateOrder(orderDto.getCustomerId(),
@@ -42,7 +42,7 @@ public class DefaultOrdersController implements OrdersController {
         orderDto.getSalesPersonID(), orderDto.getOrderId());
   }
   
-  // delete orders
+  //DELETE orders
   @Override
   public void deleteOrder(@Valid OrdersDto orderDto) {
     orderService.deleteOrder(orderDto.getOrderId());

@@ -16,6 +16,7 @@ public class DefaultCustomerController implements CustomerController {
   @Autowired
   private CustomerService customerService;
   
+  //GET all customers
   @Override
   public List<Customer> fetchCustomers() {
     
@@ -23,20 +24,20 @@ public class DefaultCustomerController implements CustomerController {
   }
  
   
-  //Gets customer by name
+  //GET customer by name
   @Override
   public List<Customer> fetchCustomerByName(String customerName) {
     return customerService.fetchCustomerByName(customerName);
   }
   
-  //Creates customer
+  //CREATE/POST a new customer
   @Override
   public Customer createCustomer(@Valid CustomerDto customerDto) {
     return customerService.createCustomer
         (customerDto.getCustomerId(), customerDto.getCustomerName(),
         customerDto.getCustomerAddress(), customerDto.getCustomerPhoneNumber());
   }
-  //Updates customer
+  //UPDATE/PUT a customer
   @Override
   public Customer updateCustomer(@Valid CustomerDto customerDto) {
     return customerService.updateCustomer
@@ -44,7 +45,7 @@ public class DefaultCustomerController implements CustomerController {
             customerDto.getCustomerAddress(), customerDto.getCustomerPhoneNumber());
    
   }
-
+  //DELETE a customer
   @Override
   public void deleteCustomer(@Valid CustomerDto customerDto) {
       log.debug("Customer ID Deleted = {}", customerDto.getCustomerId());
