@@ -1,0 +1,10 @@
+spring:
+  datasource: 
+    password: confined_space
+    username: confined_space
+    url: jdbc:mysql://localhost:3306/confined_space
+
+logging:
+  level:
+    root: warn 
+    '[com.promineotech]': debug
