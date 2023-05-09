@@ -1,25 +1,30 @@
-package com.promineotech.confinedspace.service;
+package com.promineotech.confinedspace.dao;
 
 import java.util.List;
 import com.promineotech.confinedspace.entity.Vendor;
 
-public interface VendorService {
+public interface VendorDao {
 
-  
-  //GET Vendors
+//GET
   List<Vendor> fetchAllVendor();
-  
-  //GET Vendors by name
+
+  //GET
   List<Vendor> fetchVendorByName(String vendorName);
-  
-  //CREATE Vendors
+
+  //POST
   Vendor createVendor(String vendorId, String vendorName, 
       String vendorPhoneNumber, String vendorAddress);
-  
-  //UPDATE Vendors
+
+  //PUT
+
   Vendor updateVendor(String vendorId, String vendorName, 
-  String vendorPhoneNumber, String vendorAddress);
+      String vendorPhoneNumber, String vendorAddress);
   
-  //DELETE Vendors
+  //DELETE
+
   void deleteVendor(String vendorId);
+
+
+
 }
+
