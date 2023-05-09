@@ -13,7 +13,7 @@ public interface CustomerService {
 
   //CREATE Customers
   Customer createCustomer(String customerId, String customerName, 
-      String customerPhoneNumber, String CustomerAddress);
+      String customerPhoneNumber, String customerAddress);
 
   //UPDATE Customers 
   

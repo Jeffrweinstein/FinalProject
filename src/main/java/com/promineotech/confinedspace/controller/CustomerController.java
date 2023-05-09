@@ -35,7 +35,7 @@ public interface CustomerController {
       responses = {
           @ApiResponse(
               responseCode= "200", 
-              description= "A list of customer gets returned", 
+              description= "A list of customers gets returned", 
               content = @Content(
                   mediaType = "application/json", 
                   schema = @Schema(implementation = Customer.class))),

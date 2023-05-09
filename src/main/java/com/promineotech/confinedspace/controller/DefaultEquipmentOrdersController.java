@@ -13,7 +13,6 @@ public class DefaultEquipmentOrdersController implements EquipmentOrdersControll
  private EquipmentOrdersService equipmentOrdersService;
   @Override
   public List<EquipmentOrders> fetchAllEquipmentOrders() {
-    // TODO Auto-generated method stub
     return equipmentOrdersService.fetchAllEquipmentOrders();
   }
 
