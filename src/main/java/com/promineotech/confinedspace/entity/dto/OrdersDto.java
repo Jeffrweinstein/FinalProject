@@ -1,11 +1,12 @@
 package com.promineotech.confinedspace.entity.dto;
 
+import java.util.Date;
 public class OrdersDto {
 
   private String orderId;
   private String customerId;
   private String salesPersonId;
-  private String orderDate;
+  private Date orderDate;
   private String orderPerson;
   private String jobId;
   private String poNumber;
@@ -19,7 +20,7 @@ public class OrdersDto {
   public String getSalesPersonID() {
     return salesPersonId;
   }
-  public String getOrderDate() {
+  public Date getOrderDate() {
     return orderDate;
   } 
   public String getOrderPerson() {

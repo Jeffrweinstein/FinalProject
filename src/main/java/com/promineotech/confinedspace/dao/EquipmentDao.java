@@ -1,11 +1,9 @@
-package com.promineotech.confinedspace.service;
+package com.promineotech.confinedspace.dao;
 
 import java.util.List;
 import com.promineotech.confinedspace.entity.Equipment;
 
-public interface EquipmentService {
+public interface EquipmentDao {
 
-  //GET all equipment
-  
   List<Equipment> fetchEquipment();
 }

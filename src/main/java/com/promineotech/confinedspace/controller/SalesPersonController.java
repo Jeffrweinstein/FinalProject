@@ -1,6 +1,7 @@
 package com.promineotech.confinedspace.controller;
 
 import java.util.List;
+import javax.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -183,7 +184,7 @@ public interface SalesPersonController {
           )
       @DeleteMapping("/deleteSalesPerson")
       @ResponseStatus(code= HttpStatus.OK)
-      void deleteSalesPerson(@Validated @RequestBody SalesPersonDto salesPersonDto);
+      void deleteSalesPerson(@Valid @RequestBody SalesPersonDto salesPersonDto);
       
       
       

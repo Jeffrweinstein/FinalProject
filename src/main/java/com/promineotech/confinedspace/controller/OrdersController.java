@@ -103,7 +103,7 @@ public interface OrdersController {
       description = "Returns the created order",
       responses = {
           @ApiResponse(
-              responseCode= "201", 
+              responseCode= "200", 
               description= "An order was created", 
               content = @Content(
                   mediaType = "application/json", 
