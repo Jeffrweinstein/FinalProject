@@ -74,7 +74,7 @@ public interface SalesPersonController {
               content= @Content(mediaType = "application/json")), 
           @ApiResponse(
               responseCode= "404", 
-              description = "No customers were found", 
+              description = "No sales person was found", 
               content= @Content(mediaType = "application/json")), 
           @ApiResponse(
               responseCode= "500", 
@@ -83,7 +83,7 @@ public interface SalesPersonController {
           }  , 
       parameters = {
           @Parameter(
-              name = "customerName", 
+              name = "salesPersonId", 
               allowEmptyValue = false,
               required = false,
               description = "The sales person id to be found")
@@ -94,7 +94,7 @@ public interface SalesPersonController {
         @ResponseStatus(code= HttpStatus.OK)
         List<SalesPerson> fetchSalesPersonById(String salesPersonId);
   
-//POST/ CREATE new customer
+//POST/ CREATE new sales person
   @Operation(
       summary = "Creates a new sales person", 
       description = "Returns the created sales person",
