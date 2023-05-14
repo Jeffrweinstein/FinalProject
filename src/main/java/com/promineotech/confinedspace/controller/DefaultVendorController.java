@@ -13,7 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class DefaultVendorController implements VendorController {
 
-  @Autowired
+  
   private VendorService vendorService;
   
   //GET all vendors

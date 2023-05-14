@@ -8,7 +8,7 @@ import com.promineotech.confinedspace.entity.Vendor;
 
 public class DefaultVendorService implements VendorService {
 
-  @Autowired
+  
   private VendorDao vendorDao;
   
   //GET all vendors

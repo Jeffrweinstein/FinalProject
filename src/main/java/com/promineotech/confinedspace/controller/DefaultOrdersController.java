@@ -31,7 +31,7 @@ public class DefaultOrdersController implements OrdersController {
     return orderService.createOrder(orderDto.getCustomerId(),
         orderDto.getJobId(), orderDto.getOrderDate(),
         orderDto.getOrderPerson(), orderDto.getPoNumber(),
-        orderDto.getSalesPersonID(), orderDto.getOrderId());
+        orderDto.getSalesPersonId(), orderDto.getOrderId());
   }
   //UPDATE/PUT orders
   @Override
@@ -39,7 +39,7 @@ public class DefaultOrdersController implements OrdersController {
     return orderService.updateOrder(orderDto.getCustomerId(),
         orderDto.getJobId(), orderDto.getOrderDate(), 
         orderDto.getOrderPerson(), orderDto.getPoNumber(),
-        orderDto.getSalesPersonID(), orderDto.getOrderId());
+        orderDto.getSalesPersonId(), orderDto.getOrderId());
   }
   
   //DELETE orders

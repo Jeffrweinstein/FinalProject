@@ -2,13 +2,13 @@ package com.promineotech.confinedspace.service;
 
 import java.util.List;
 import javax.transaction.Transactional;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import com.promineotech.confinedspace.dao.CustomerDao;
 import com.promineotech.confinedspace.entity.Customer;
 
 public class DefaultCustomerService implements CustomerService {
 
-  @Autowired
+  
   private CustomerDao customerDao;
   
   //GET

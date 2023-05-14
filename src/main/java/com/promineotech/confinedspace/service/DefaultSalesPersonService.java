@@ -8,7 +8,7 @@ import com.promineotech.confinedspace.entity.SalesPerson;
 
 public class DefaultSalesPersonService implements SalesPersonService {
 
-  @Autowired
+  
   private SalesPersonDao salesPersonDao;
   
   //GET all sales people

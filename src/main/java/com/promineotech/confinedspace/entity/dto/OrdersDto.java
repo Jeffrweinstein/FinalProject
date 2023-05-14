@@ -17,7 +17,7 @@ public class OrdersDto {
   public String getCustomerId() {
     return customerId;
   }
-  public String getSalesPersonID() {
+  public String getSalesPersonId() {
     return salesPersonId;
   }
   public Date getOrderDate() {

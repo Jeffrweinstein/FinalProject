@@ -14,7 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class DefaultSalesPersonController implements SalesPersonController {
 
-  @Autowired
+  
   private SalesPersonService salesPersonService;
   
   //GET all sales people

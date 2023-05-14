@@ -13,7 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class DefaultCustomerController implements CustomerController {
 
-  @Autowired
+  
   private CustomerService customerService;
   
   //GET all customers
