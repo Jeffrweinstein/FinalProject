@@ -17,7 +17,7 @@ CREATE TABLE equipment (
 equipment_id VARCHAR(8) NOT NULL,
 vendor_id VARCHAR(7) NOT NULL,
 equipment_group enum ('Plug', 'Gas Detector') NOT NULL,
-equipment_size enum ('4-8', '6-10', '8-12', '12-18', '15-30', '4', '5') NOT NULL,
+equipment_size enum ('Four_Eight', 'Six_Ten', 'Eight_Twelve', 'Twelve_Eighteen', 'Four') NOT NULL,
 equipment_type enum ('Gas', 'Test', 'Block', 'Flow_Thru'),
 price DECIMAL(6,2) NOT NULL,
 CONSTRAINT equipment_equipmentId_PK PRIMARY KEY (equipment_id),
