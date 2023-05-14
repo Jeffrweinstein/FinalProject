@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.promineotech.confinedspace.dao.SalesPersonDao;
 import com.promineotech.confinedspace.entity.SalesPerson;
 
-public class DefaultSalesPerson implements SalesPersonService {
+public class DefaultSalesPersonService implements SalesPersonService {
 
   @Autowired
   private SalesPersonDao salesPersonDao;
