@@ -1,6 +1,6 @@
 package com.promineotech.confinedspace.entity.dto;
 
-public class CustomerDto {
+/*public class CustomerDto {
 
   private String customerId;
   private String customerName;
@@ -21,3 +21,4 @@ public class CustomerDto {
   }
 }
 
+*/

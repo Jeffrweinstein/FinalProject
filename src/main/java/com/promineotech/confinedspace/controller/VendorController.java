@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import com.promineotech.confinedspace.entity.Vendor;
-import com.promineotech.confinedspace.entity.dto.VendorDto;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -124,7 +123,7 @@ public interface VendorController {
       @PostMapping("/createVendor")
       @ResponseStatus(code= HttpStatus.CREATED)
       
-      Vendor createVendor(@Validated @RequestBody VendorDto vendorDto);
+      Vendor createVendor(@Validated @RequestBody Vendor vendor);
       
     //Update/PUT a vendor
       
@@ -155,7 +154,7 @@ public interface VendorController {
       
       @PutMapping("/updateVendor")
       @ResponseStatus(code= HttpStatus.OK)
-      Vendor updateVendor(@Validated @RequestBody VendorDto vendorDto);
+      Vendor updateVendor(@Validated @RequestBody Vendor vendorDto);
       
     //DELETE a vendor
       @Operation(
@@ -185,7 +184,7 @@ public interface VendorController {
           )
       @DeleteMapping("/deleteVendor")
       @ResponseStatus(code= HttpStatus.OK)
-      void deleteVendor(@Valid @RequestBody VendorDto vendorDto);
+      void deleteVendor(@Valid @RequestBody Vendor vendor);
       
       
       

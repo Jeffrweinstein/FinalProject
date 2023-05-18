@@ -1,5 +1,5 @@
 package com.promineotech.confinedspace.entity.dto;
-
+/*
 public class EquipmentOrdersDto {
 
   private String orderId;
@@ -16,3 +16,4 @@ public class EquipmentOrdersDto {
     return quantity;
   }
 }
+*/

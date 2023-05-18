@@ -1,6 +1,6 @@
 package com.promineotech.confinedspace.entity.dto;
 
-public class VendorDto {
+ /*public class VendorDto {
 
   
   private String vendorId;
@@ -21,3 +21,4 @@ public class VendorDto {
     return vendorPhoneNumber;
   }
 }
+*/

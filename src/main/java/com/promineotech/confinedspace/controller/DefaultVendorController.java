@@ -5,7 +5,6 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 import com.promineotech.confinedspace.entity.Vendor;
-import com.promineotech.confinedspace.entity.dto.VendorDto;
 import com.promineotech.confinedspace.service.VendorService;
 import lombok.extern.slf4j.Slf4j;
 
@@ -13,7 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class DefaultVendorController implements VendorController {
 
-  
+  @Autowired
   private VendorService vendorService;
   
   //GET all vendors
@@ -32,14 +31,14 @@ public class DefaultVendorController implements VendorController {
   
   //CREATE/POST a vendor
   @Override
-  public Vendor createVendor(@Valid VendorDto vendorDto) {
+  public Vendor createVendor(@Valid Vendor vendorDto) {
     return vendorService.createVendor
         (vendorDto.getVendorId(), vendorDto.getVendorName(),
         vendorDto.getVendorAddress(), vendorDto.getVendorPhoneNumber());
   }
   //UPDATE/PUT a vendor
   @Override
-  public Vendor updateVendor(@Valid VendorDto vendorDto) {
+  public Vendor updateVendor(@Valid Vendor vendorDto) {
     return vendorService.updateVendor
         (vendorDto.getVendorId(), vendorDto.getVendorName(),
             vendorDto.getVendorAddress(), vendorDto.getVendorPhoneNumber());
@@ -47,9 +46,9 @@ public class DefaultVendorController implements VendorController {
   }
   //DELETE a vendor
   @Override
-  public void deleteVendor(@Valid VendorDto vendorDto) {
-      log.debug("Customer ID Deleted = {}", vendorDto.getVendorId());
-      vendorService.deleteVendor(vendorDto.getVendorId());
+  public void deleteVendor(@Valid Vendor vendor) {
+      log.debug("Customer ID Deleted = {}", vendor.getVendorId());
+      vendorService.deleteVendor(vendor.getVendorId());
 
   }
 

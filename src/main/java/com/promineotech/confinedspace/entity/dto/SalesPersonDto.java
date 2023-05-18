@@ -1,5 +1,5 @@
 package com.promineotech.confinedspace.entity.dto;
-
+/*
 public class SalesPersonDto {
 
   private String salesPersonId;
@@ -16,3 +16,4 @@ public class SalesPersonDto {
     return firstName;
   }
 }
+*/

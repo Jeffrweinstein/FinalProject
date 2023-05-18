@@ -1,5 +1,5 @@
 package com.promineotech.confinedspace.entity.dto;
-
+/*
 import java.math.BigDecimal;
 import com.promineotech.confinedspace.entity.EquipmentGroup;
 import com.promineotech.confinedspace.entity.EquipmentSize;
@@ -31,7 +31,4 @@ public class EquipmentDto {
     return type;
   }
   public BigDecimal getPrice() {
-    return price;
-  }
-    
-}
+    */

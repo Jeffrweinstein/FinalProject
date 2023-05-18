@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import com.promineotech.confinedspace.entity.Orders;
-import com.promineotech.confinedspace.entity.dto.OrdersDto;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -124,7 +123,7 @@ public interface OrdersController {
       )
   @PostMapping("/createOrder")
   @ResponseStatus(code= HttpStatus.CREATED)
-  Orders createOrder(@Valid @RequestBody OrdersDto orderDto);
+  Orders createOrder(@Valid @RequestBody Orders order);
   
   
   //Update/PUT an order
@@ -154,7 +153,7 @@ public interface OrdersController {
       )
   @PutMapping("/updateOrder")
   @ResponseStatus(code= HttpStatus.OK)
-Orders updateOrder(@Valid @RequestBody OrdersDto orderDto);
+Orders updateOrder(@Valid @RequestBody Orders order);
   
   //DELETE an order
   @Operation(
@@ -183,7 +182,7 @@ Orders updateOrder(@Valid @RequestBody OrdersDto orderDto);
       )
   @DeleteMapping("/deleteOrder")
   @ResponseStatus(code= HttpStatus.OK)
-  void deleteOrder(@Valid @RequestBody OrdersDto orderDto);
+  void deleteOrder(@Valid @RequestBody Orders order);
 
 
 

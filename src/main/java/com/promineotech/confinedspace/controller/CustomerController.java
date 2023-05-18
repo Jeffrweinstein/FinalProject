@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import com.promineotech.confinedspace.entity.Customer;
-import com.promineotech.confinedspace.entity.dto.CustomerDto;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -124,7 +123,7 @@ public interface CustomerController {
       @PostMapping("/createCustomer")
       @ResponseStatus(code= HttpStatus.CREATED)
       
-      Customer createCustomer(@Valid @RequestBody CustomerDto customerDto);
+      Customer createCustomer(@Valid @RequestBody Customer customer);
       
     //Update/PUT a customer
       
@@ -155,7 +154,7 @@ public interface CustomerController {
       
       @PutMapping("/updateCustomer")
       @ResponseStatus(code= HttpStatus.OK)
-      Customer updateCustomer(@Valid @RequestBody CustomerDto customerDto);
+      Customer updateCustomer(@Valid @RequestBody Customer customer);
       
     //DELETE a customer
       @Operation(
@@ -185,7 +184,7 @@ public interface CustomerController {
           )
       @DeleteMapping("/deleteCustomer")
       @ResponseStatus(code= HttpStatus.OK)
-      void deleteCustomer(@Valid @RequestBody CustomerDto customerDto);
+      void deleteCustomer(@Valid @RequestBody Customer customer);
       
       
       

@@ -3,12 +3,13 @@ package com.promineotech.confinedspace.controller;
 import java.util.List;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RestController;
 import com.promineotech.confinedspace.entity.Orders;
-import com.promineotech.confinedspace.entity.dto.OrdersDto;
 import com.promineotech.confinedspace.service.OrdersService;
 
 @RestController
+@Service
 public class DefaultOrdersController implements OrdersController {
 
   @Autowired
@@ -27,25 +28,25 @@ public class DefaultOrdersController implements OrdersController {
   }
   //CREATE/POST new orders
   @Override
-  public Orders createOrder(@Valid OrdersDto orderDto) {
-    return orderService.createOrder(orderDto.getCustomerId(),
-        orderDto.getJobId(), orderDto.getOrderDate(),
-        orderDto.getOrderPerson(), orderDto.getPoNumber(),
-        orderDto.getSalesPersonId(), orderDto.getOrderId());
+  public Orders createOrder(@Valid Orders order) {
+    return orderService.createOrder(order.getCustomerId(),
+        order.getJobId(), order.getOrderDate(),
+        order.getOrderPerson(), order.getPoNumber(),
+        order.getSalesPersonId(), order.getOrderId());
   }
   //UPDATE/PUT orders
   @Override
-  public Orders updateOrder(@Valid OrdersDto orderDto) {
-    return orderService.updateOrder(orderDto.getCustomerId(),
-        orderDto.getJobId(), orderDto.getOrderDate(), 
-        orderDto.getOrderPerson(), orderDto.getPoNumber(),
-        orderDto.getSalesPersonId(), orderDto.getOrderId());
+  public Orders updateOrder(@Valid Orders order) {
+    return orderService.updateOrder(order.getCustomerId(),
+        order.getJobId(), order.getOrderDate(), 
+        order.getOrderPerson(), order.getPoNumber(),
+        order.getSalesPersonId(), order.getOrderId());
   }
   
   //DELETE orders
   @Override
-  public void deleteOrder(@Valid OrdersDto orderDto) {
-    orderService.deleteOrder(orderDto.getOrderId());
+  public void deleteOrder(@Valid Orders order) {
+    orderService.deleteOrder(order.getOrderId());
   }
 
 }

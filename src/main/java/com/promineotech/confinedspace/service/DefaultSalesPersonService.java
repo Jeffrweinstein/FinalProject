@@ -1,31 +1,33 @@
 package com.promineotech.confinedspace.service;
 
 import java.util.List;
-import javax.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import com.promineotech.confinedspace.dao.SalesPersonDao;
 import com.promineotech.confinedspace.entity.SalesPerson;
 
+@Service
 public class DefaultSalesPersonService implements SalesPersonService {
 
-  
+  @Autowired
   private SalesPersonDao salesPersonDao;
   
   //GET all sales people
-  @Transactional
+  @Transactional(readOnly = true)
   @Override
   public List<SalesPerson> fetchAllSalesPerson() {
     List<SalesPerson> salesPerson = salesPersonDao.fetchAllSalesPerson();
     return salesPerson;   
   }
   //GET sales person by ID
-  @Transactional
+  @Transactional(readOnly = true)
   @Override
   public List<SalesPerson> fetchSalesPersonBySalesPersonId(String salesPersonId) {
     List<SalesPerson> salesPerson = salesPersonDao.fetchSalesPersonById(salesPersonId);
     return salesPerson;
     }
-  @Transactional
+  @Transactional(readOnly = true)
   @Override
   public SalesPerson createSalesPerson(String salesPersonId, String lastName, String firstName) {
     

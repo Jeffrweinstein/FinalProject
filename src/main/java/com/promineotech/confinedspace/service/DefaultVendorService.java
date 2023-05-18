@@ -1,18 +1,20 @@
 package com.promineotech.confinedspace.service;
 
 import java.util.List;
-import javax.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import com.promineotech.confinedspace.dao.VendorDao;
 import com.promineotech.confinedspace.entity.Vendor;
 
+@Service
 public class DefaultVendorService implements VendorService {
 
-  
+  @Autowired
   private VendorDao vendorDao;
   
   //GET all vendors
-  @Transactional
+  @Transactional(readOnly = true)
   @Override
   public List<Vendor> fetchAllVendor(){
   List<Vendor> vendor = vendorDao.fetchAllVendor();
@@ -20,7 +22,7 @@ public class DefaultVendorService implements VendorService {
   }
   //GET vendor by name
 
-  @Transactional
+  @Transactional(readOnly = true)
   @Override
   public List<Vendor> fetchVendorByName(String vendorName) {
   List<Vendor> vendor = vendorDao.fetchVendorByName(vendorName);
