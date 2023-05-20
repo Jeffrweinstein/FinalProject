@@ -7,7 +7,7 @@ public class OrdersDto {
   private String orderId;
   private String customerId;
   private String salesPersonId;
-  private Date orderDate;
+  private String orderDate;
   private String orderPerson;
   private String jobId;
   private String poNumber;

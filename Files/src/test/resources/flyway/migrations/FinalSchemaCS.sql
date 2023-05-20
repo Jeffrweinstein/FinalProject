@@ -17,8 +17,8 @@ CREATE TABLE equipment (
 equipment_id VARCHAR(8) NOT NULL,
 vendor_id VARCHAR(7) NOT NULL,
 equipment_group enum ('Plug', 'Gas Detector') NOT NULL,
-equipment_size enum ('Four_Eight', 'Six_Ten', 'Eight_Twelve', 'Twelve_Eighteen', 'Four') NOT NULL,
-equipment_type enum ('Gas', 'Test', 'Block', 'Flow_Thru'),
+equipment_size enum ('Four_Eight', 'Six_Ten', 'Eight_Twelve', 'Four') NOT NULL,
+equipment_type enum ('Gas', 'Test', 'Block', 'Flow_Thru') NOT NULL,
 price DECIMAL(6,2) NOT NULL,
 CONSTRAINT equipment_equipmentId_PK PRIMARY KEY (equipment_id),
 CONSTRAINT equipment_vendorId_FK FOREIGN KEY (vendor_id) REFERENCES vendor (vendor_id) ON DELETE CASCADE
@@ -31,7 +31,6 @@ customer_address VARCHAR (128),
 customer_phone_number VARCHAR(20),
 CONSTRAINT customer_customerId_PK PRIMARY KEY (customer_id)
 );
-
 CREATE TABLE sales_person (
 sales_person_id VARCHAR(6) NOT NULL,
 last_name VARCHAR(45),
@@ -42,10 +41,10 @@ CONSTRAINT salesPerson_salesPersonId_PK PRIMARY KEY (sales_person_id)
 CREATE TABLE orders (
 order_id VARCHAR(7) NOT NULL,
 customer_id VARCHAR(7) NOT NULL,
-sales_person_id VARCHAR(6),
-order_date DATE,
+sales_person_id  VARCHAR(8) NULL,
+order_date VARCHAR(8) NOT NULL,
 order_person VARCHAR(45) NOT NULL,
-job_id VARCHAR(10),
+job_id VARCHAR(8),
 po_number VARCHAR(10) NOT NULL,
 CONSTRAINT orders_orderId_PK PRIMARY KEY (order_id),
 CONSTRAINT orders_customerID_FK FOREIGN KEY (customer_id) REFERENCES customer (customer_id) ON DELETE cascade,
@@ -60,4 +59,3 @@ CONSTRAINT equipmentOrders_equipmentId_FK FOREIGN KEY (equipment_id) REFERENCES 
 CONSTRAINT equipmentOrders_orderId_FK FOREIGN KEY (order_id) REFERENCES orders (order_id) ON DELETE CASCADE,
 CONSTRAINT equipmentOrders_orderId_equipmentId_UK UNIQUE KEY (order_id, equipment_id)
 );
-

@@ -42,7 +42,7 @@ public class DefaultOrdersDao implements OrdersDao {
            .orderId(rs.getString("order_id"))
            .customerId(rs.getString("customer_id"))
            .salesPersonId(rs.getString("salesPerson_id"))
-           .orderDate(rs.getDate("order_date"))
+           .orderDate(rs.getString("order_date"))
            .orderPerson(rs.getString("orderPerson"))
            .jobId(rs.getString("jobId"))
            .poNumber(rs.getString("poNumber"))
@@ -72,7 +72,7 @@ public class DefaultOrdersDao implements OrdersDao {
            .customerId(rs.getString("customer_id"))
            .orderId(rs.getString("order_id"))
            .salesPersonId(rs.getString("salesPerson_id"))
-           .orderDate(rs.getDate("order_date"))
+           .orderDate(rs.getString("orderDate"))
            .orderPerson(rs.getString("orderPerson"))
            .jobId(rs.getString("jobId"))
            .poNumber(rs.getString("poNumber"))
@@ -86,7 +86,7 @@ public class DefaultOrdersDao implements OrdersDao {
   
 
   @Override
-  public Orders createOrder(String customerId, String jobId, Date orderDate, String orderPerson,
+  public Orders createOrder(String customerId, String jobId, String orderDate, String orderPerson,
       String poNumber, String salesPersonId, String orderId) {
     SqlParams params = new SqlParams();
     KeyHolder keyHolder = new GeneratedKeyHolder();
@@ -118,7 +118,7 @@ public class DefaultOrdersDao implements OrdersDao {
         .orderPerson(orderPerson)
         .jobId(jobId)
         .poNumber(poNumber)
-        .orderDate(null)
+        .orderDate(orderDate)
         .build();
         //@formatter:on
   }
@@ -130,7 +130,7 @@ public class DefaultOrdersDao implements OrdersDao {
   
 
   @Override
-  public Orders updateOrder(String customerId, String jobId, Date orderDate, String orderPerson,
+  public Orders updateOrder(String customerId, String jobId, String orderDate, String orderPerson,
       String poNumber, String salesPersonId) {
     //@formatter:off
   String sql = ""
@@ -162,6 +162,7 @@ public class DefaultOrdersDao implements OrdersDao {
   return Orders.builder()
       .customerId("customer_id")
       .orderId("order_id")
+      .orderDate("orderDate")
       .salesPersonId("salesPerson_id")
       .orderPerson("orderPerson")
       .jobId("jobId")

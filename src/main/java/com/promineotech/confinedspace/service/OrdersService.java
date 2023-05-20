@@ -1,6 +1,5 @@
 package com.promineotech.confinedspace.service;
 
-import java.util.Date;
 import java.util.List;
 import com.promineotech.confinedspace.entity.Orders;
 
@@ -13,11 +12,11 @@ public interface OrdersService {
   List<Orders> fetchOrderByCustomerId(String customerId);
   
   //Create orders
-  Orders createOrder(String customerId, String jobId, Date date,
+  Orders createOrder(String customerId, String jobId, String orderDate,
        String orderPerson, String poNumber, String salesPersonId, String orderId);
 
   //Update orders
-  Orders updateOrder(String customerId, String jobId, Date date,
+  Orders updateOrder(String customerId, String jobId, String orderDate,
       String orderPerson, String poNumber, String salesPersonId, String OrderId);
 
   //Delete orders

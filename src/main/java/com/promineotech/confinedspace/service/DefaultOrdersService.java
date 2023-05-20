@@ -33,7 +33,7 @@ public List<Orders> fetchOrderByCustomerId(String customerId) {
 //CREATE orders
 
 @Override
-public Orders createOrder(String customerId, String jobId, Date orderDate,
+public Orders createOrder(String customerId, String jobId, String orderDate,
     String orderPerson, String poNumber, String salesPersonId, String orderId) {
   
   return orderDao.createOrder(customerId, jobId, orderDate,
@@ -42,7 +42,7 @@ public Orders createOrder(String customerId, String jobId, Date orderDate,
 //UPDATE orders
 
 @Override
-public Orders updateOrder(String customerId, String jobId, Date orderDate,
+public Orders updateOrder(String customerId, String jobId, String orderDate,
      String orderPerson, String poNumber, String salesPersonId, String orderId)
 {
   return orderDao.updateOrder(customerId, jobId, orderDate, orderPerson, poNumber, salesPersonId);
