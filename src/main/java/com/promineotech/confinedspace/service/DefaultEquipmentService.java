@@ -10,7 +10,8 @@ import com.promineotech.confinedspace.entity.Equipment;
 @Service
 public class DefaultEquipmentService implements EquipmentService {
 
-  @Autowired EquipmentDao equipmentDao;
+  @Autowired 
+  private EquipmentDao equipmentDao;
   
   @Transactional(readOnly = true)
   @Override
