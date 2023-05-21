@@ -7,5 +7,5 @@ public interface EquipmentService {
 
   //GET all equipment
   
-  List<Equipment> fetchEquipment();
+  List<Equipment> fetchAllEquipment();
 }

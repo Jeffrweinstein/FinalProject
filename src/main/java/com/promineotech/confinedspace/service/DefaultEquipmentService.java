@@ -14,8 +14,8 @@ public class DefaultEquipmentService implements EquipmentService {
   
   @Transactional(readOnly = true)
   @Override
-  public List<Equipment> fetchEquipment() {
-    List<Equipment> equipment = equipmentDao.fetchEquipment();
+  public List<Equipment> fetchAllEquipment() {
+    List<Equipment> equipment = equipmentDao.fetchAllEquipment();
     
     return equipment;
   }

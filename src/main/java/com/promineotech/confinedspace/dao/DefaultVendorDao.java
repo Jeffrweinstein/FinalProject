@@ -26,8 +26,8 @@ public class DefaultVendorDao implements VendorDao {
   public List<Vendor> fetchAllVendor() {
     //@formatter:off
     String sql = ""
-        + "SELECT "
-        + "FROM vendor";
+        + "SELECT * FROM vendor";
+   
     
     //@formatter:on
     

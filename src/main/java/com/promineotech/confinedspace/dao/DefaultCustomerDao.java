@@ -27,8 +27,8 @@ public class DefaultCustomerDao implements CustomerDao {
   public List<Customer> fetchAllCustomer() {
     //@formatter:off
     String sql = ""
-        + "SELECT "
-        + "FROM customer";
+        + "SELECT * FROM customer";
+     
     
     //@formatter:on
     return jdbcTemplate.query(sql, new RowMapper<Customer>() {

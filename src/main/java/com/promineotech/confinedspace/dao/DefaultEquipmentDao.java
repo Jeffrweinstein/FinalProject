@@ -21,7 +21,7 @@ public class DefaultEquipmentDao implements EquipmentDao {
   private NamedParameterJdbcTemplate jdbcTemplate;
   
   @Override
-  public List<Equipment> fetchEquipment() {
+  public List<Equipment> fetchAllEquipment() {
  // @formatter:off
     String sql = ""
         + "SELECT * FROM equipment";

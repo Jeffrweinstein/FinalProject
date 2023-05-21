@@ -14,7 +14,7 @@ public class DefaultEquipmentController implements EquipmentController {
   
   @Override
   public List<Equipment> fetchAllEquipment() {
-    return equipmentService.fetchEquipment();
+    return equipmentService.fetchAllEquipment();
   }
 
 }

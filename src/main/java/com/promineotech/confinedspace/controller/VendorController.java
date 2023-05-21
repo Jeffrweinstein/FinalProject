@@ -24,8 +24,8 @@ import io.swagger.v3.oas.annotations.servers.Server;
 
 @Validated
 @RequestMapping("/vendor")
-@OpenAPIDefinition(info = @Info(title = "Confined Space Vendor Service"),
-servers = { @Server(url = "http://localhost:8080", description = "Local server.")})
+ @OpenAPIDefinition(info = @Info(title = "Confined Space Vendor Service"),
+servers = { @Server(url = "http://localhost:8080", description = "Local server.")}) 
 public interface VendorController {
 //@formatter:off
   @Operation(

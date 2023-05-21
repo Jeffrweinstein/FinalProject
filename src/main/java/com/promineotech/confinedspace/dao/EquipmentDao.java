@@ -5,5 +5,5 @@ import com.promineotech.confinedspace.entity.Equipment;
 
 public interface EquipmentDao {
 
-  List<Equipment> fetchEquipment();
+  List<Equipment> fetchAllEquipment();
 }

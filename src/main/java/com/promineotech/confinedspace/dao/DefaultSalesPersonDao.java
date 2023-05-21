@@ -27,8 +27,8 @@ public class DefaultSalesPersonDao implements SalesPersonDao {
   public List<SalesPerson> fetchAllSalesPerson() {
   //@formatter:off
     String sql = ""
-        + "SELECT "
-        + "FROM sales_person";
+        + "SELECT * FROM sales_person"; 
+      
     
     //@formatter:on
     return jdbcTemplate.query(sql, new RowMapper<SalesPerson>() {
@@ -153,8 +153,7 @@ public class DefaultSalesPersonDao implements SalesPersonDao {
        throw new NoSuchElementException("Could not delete sales person");
      }
    }
-
- }
+}
 
 
  
