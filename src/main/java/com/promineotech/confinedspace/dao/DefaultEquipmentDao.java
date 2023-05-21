@@ -34,6 +34,7 @@ public class DefaultEquipmentDao implements EquipmentDao {
         // @formatter:off
        return Equipment.builder()
            .equipmentId(rs.getString("equipment_id"))
+           .vendorId(rs.getString("vendor_id"))
            .size(EquipmentSize.valueOf(rs.getString("size")))
            .group(EquipmentGroup.valueOf(rs.getString("group")))
            .type(EquipmentType.valueOf(rs.getString("type")))
